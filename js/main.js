@@ -1,8 +1,14 @@
-(function(){
+(function() {
  'use strict';
+// Components(部品の再利用)
 
-
- const app = new VTTCue({
+var likeComponent = Vue.extend({
+  template: '<button>Like</button>'
+});
+ var app = new Vue({
   el: '#app',
+  components: {
+    'like-component': likeComponent
+  }
  });
 })();
