@@ -22,6 +22,8 @@ var likeComponent = Vue.extend({
   methods: {
     countUp: function() {
       this.count++;
+      // イベントの発火にemitを使用する
+      this. $emit('increment');
     }
   }
 });
@@ -29,6 +31,14 @@ var likeComponent = Vue.extend({
   el: '#app',
   components: {
     'like-component': likeComponent
+  },
+  data: {
+    total: 0
+  },
+  methods: {
+    incrementTotal: function() {
+      this.total++;
+    }
   }
  });
 })();
